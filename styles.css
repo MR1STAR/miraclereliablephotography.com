@@ -1,0 +1,97 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#ef2029;--gold:#f5b91c;--black:#080909;--dark:#0e1011;--white:#fff;--muted:#c8c8c8;--card:#151819}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.page-bg{position:fixed;inset:0;background:url("assets/background.jpg") center/cover no-repeat;z-index:-3;filter:saturate(1.05)}
+.bg-overlay{position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.83),rgba(0,0,0,.7) 35%,rgba(0,0,0,.94));z-index:-2}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:rgba(5,6,6,.92);border-bottom:1px solid #292c2d;backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand strong{display:block;font-size:15px;letter-spacing:1px}
+.brand small{display:block;color:#ddd;letter-spacing:4px;font-size:10px}
+.mr-logo{font-weight:900;font-size:28px;line-height:1;color:var(--white);padding:4px 8px;border:3px solid var(--red);border-radius:9px;position:relative}
+.mr-logo:after{content:"";position:absolute;right:-5px;bottom:-5px;width:11px;height:11px;background:var(--gold);border-radius:50%}
+nav{display:flex;gap:7px;align-items:center}
+nav a,nav button{border:0;background:none;color:#eee;padding:10px 15px;border-radius:7px;cursor:pointer}
+nav a:hover,nav a.active,.nav-settings:hover{background:var(--red)}
+.menu-btn{display:none;background:none;color:white;border:0;font-size:28px}
+.section{padding:100px 6%;position:relative}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:130px}
+.hero-content{max-width:760px}
+.eyebrow,.section-heading>span,.section-kicker{color:var(--gold);font-size:13px;font-weight:800;letter-spacing:3px}
+h1{font-size:clamp(42px,7vw,82px);line-height:1.02;margin:16px 0}
+h1 span,h2 em{color:var(--red);font-style:normal}
+.tagline{font-size:clamp(18px,2vw,25px);color:#eee;max-width:650px}
+.location{margin:18px 0;color:#ddd}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:7px;font-weight:800;border:1px solid transparent;transition:.25s}
+.btn.primary{background:var(--red);box-shadow:0 8px 28px rgba(239,32,41,.22)}
+.btn.primary:hover{transform:translateY(-2px);background:#ff333b}
+.btn.ghost{border-color:#aaa;background:rgba(0,0,0,.3)}
+.btn.ghost:hover{border-color:var(--red)}
+.dark-section{background:rgba(7,9,9,.96)}
+.section-heading{text-align:center;max-width:800px;margin:0 auto 40px}
+.section-heading h2{font-size:clamp(32px,5vw,54px);margin:5px 0}
+.section-heading p{color:var(--muted)}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:auto}
+.service-card{background:linear-gradient(145deg,#171a1b,#0d0f10);border:1px solid #333;border-radius:12px;padding:24px 18px;min-height:220px;transition:.25s}
+.service-card:hover{transform:translateY(-6px);border-color:var(--red);box-shadow:0 15px 40px rgba(0,0,0,.35)}
+.service-icon{font-size:34px;color:var(--gold)}
+.service-card h3{margin:9px 0;font-size:20px}
+.service-card p{color:#bbb;font-size:14px}
+.about-section{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;background:rgba(250,250,250,.96);color:#111}
+.about-copy h2{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:8px 0 20px}
+.about-copy p{margin:12px 0;color:#333;max-width:800px}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;font-weight:700}
+.about-card{min-height:360px;border-radius:18px;background:linear-gradient(135deg,#080909,#202324);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 20px 50px #0004}
+.about-card .lens{font-size:90px;color:var(--red)}
+.about-card strong{font-size:70px;display:block}
+.about-card span{display:block;font-size:18px}
+.about-card small{display:block;color:var(--gold);letter-spacing:2px;margin-top:8px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:auto}
+.gallery-item{min-height:220px;border:1px solid #3a3a3a;border-radius:12px;overflow:hidden;cursor:pointer;background-image:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.8)),url("assets/background.jpg");background-size:cover;background-position:center;display:flex;align-items:flex-end;text-align:left;padding:20px;color:white;font-weight:900;letter-spacing:1px;transition:.25s}
+.gallery-item:nth-child(2){background-position:35% center}.gallery-item:nth-child(3){background-position:65% center}.gallery-item:nth-child(4){background-position:80% center}
+.gallery-item:hover{transform:scale(1.02);border-color:var(--gold)}
+.booking-section{background:linear-gradient(135deg,#210607,#100909)}
+.booking{max-width:1050px;margin:auto;border:1px solid #512025;border-radius:16px;padding:35px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.booking h2{font-size:clamp(28px,4vw,45px);margin:5px 0}
+.booking p{color:#ccc}
+.contact-section{background:#f3f3f3;color:#111}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1050px;margin:auto}
+.contact-card{background:white;border:1px solid #ddd;border-radius:12px;padding:25px;display:flex;flex-direction:column;gap:8px;box-shadow:0 8px 25px #0000000d}
+.contact-card b{color:#a20f15}.contact-card span{word-break:break-word}
+footer{background:#050606;border-top:1px solid #292929;padding:25px 6%;display:flex;justify-content:space-between;gap:15px;align-items:center;color:#aaa;font-size:13px}
+.footer-brand{color:white;font-weight:800;display:flex;align-items:center;gap:8px}.footer-brand .mr-logo{font-size:18px;border-width:2px}
+.settings-panel{position:fixed;right:-330px;top:0;width:320px;height:100vh;background:#101212;color:white;z-index:40;padding:25px;box-shadow:-10px 0 35px #0008;transition:.3s}
+.settings-panel.open{right:0}
+.settings-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.settings-head button,#closeModal{background:none;border:0;color:white;font-size:30px;cursor:pointer}
+.setting-row{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #333}
+.setting-row input{width:20px;height:20px;accent-color:var(--red)}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:50;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-box{position:relative;background:#111;color:white;max-width:620px;width:100%;padding:20px;border-radius:15px;border:1px solid #444}
+.modal-box #closeModal{position:absolute;right:12px;top:4px}
+.modal-image{height:280px;border-radius:10px;background:url("assets/background.jpg") center/cover;margin-bottom:20px}
+.modal-box h3{font-size:28px}.modal-box p{color:#bbb;margin:8px 0 20px}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+.large-text{font-size:110%}
+.light-mode{--black:#f5f5f5;--dark:#fff;--white:#101010}.light-mode .dark-section{background:rgba(255,255,255,.95);color:#111}.light-mode .site-header{background:#fff;color:#111}.light-mode nav a,.light-mode nav button{color:#111}.light-mode .service-card{background:#fff;color:#111}.light-mode .service-card p{color:#444}.light-mode footer{background:#fff;color:#444}.light-mode .footer-brand{color:#111}
+.no-motion *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(max-width:950px){.service-grid{grid-template-columns:repeat(2,1fr)}.about-section{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.site-header{padding:10px 4%}nav{position:absolute;top:100%;left:0;right:0;background:#090a0a;display:none;flex-direction:column;align-items:stretch;padding:12px 4%;border-top:1px solid #333}nav.open{display:flex}.menu-btn{display:block}.service-grid,.gallery-grid,.contact-grid{grid-template-columns:1fr}.hero{min-height:90vh}.booking{flex-direction:column;align-items:flex-start}.about-points{grid-template-columns:1fr}footer{flex-direction:column;text-align:center}.brand strong{font-size:12px}.brand small{font-size:8px}}
+
+.booking-form-section{background:linear-gradient(180deg,#111313,#080909)}
+.booking-form{max-width:950px;margin:auto;background:rgba(255,255,255,.06);border:1px solid #383b3c;border-radius:16px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.28)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-grid label{display:flex;flex-direction:column;gap:7px;font-weight:700;color:#f1f1f1}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;border:1px solid #444;background:#090a0a;color:white;border-radius:8px;padding:13px 14px;outline:none}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,32,41,.12)}
+.form-grid textarea{resize:vertical}
+.form-grid option{background:#111;color:white}
+.full-width{grid-column:1/-1}
+.booking-note{margin:20px 0;padding:13px 15px;background:rgba(245,185,28,.08);border-left:3px solid var(--gold);color:#ddd;border-radius:5px}
+.booking-submit{width:100%;border:0;cursor:pointer;font-size:16px}
+.form-status{min-height:24px;text-align:center;margin-top:12px;color:#7df0a5;font-weight:700}
+@media(max-width:720px){.form-grid{grid-template-columns:1fr}.full-width{grid-column:auto}.booking-form{padding:20px}}
